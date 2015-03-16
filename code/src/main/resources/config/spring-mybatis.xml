@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.2.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+    http://www.springframework.org/schema/util 
+    http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+    
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+		<property name="driverClassName" value="${database.driver_class}" />
+		<property name="url" value="${database.url}" />
+		<property name="username" value="${database.username}" />
+		<property name="password" value="${database.password}"/>
+		<!-- 初始化连接大小 -->
+		<property name="initialSize" value="${pool.initialSize}"/>
+		<!-- 连接池最大使用连接数 -->
+		<property name="maxActive" value="${pool.maxActive}"/>
+		<!-- 连接池最小空闲 -->
+		<property name="minIdle" value="${pool.minIdle}"/>
+		<!-- 获取连接最大等待时间 -->
+		<property name="maxWait" value="${pool.maxWait}"/>
+		<!-- 自动清除无用连接 -->
+		<property name="removeAbandoned" value="${pool.removeAbandoned}"/>
+		<!-- 清除无用连接的等待时间 -->
+		<property name="removeAbandonedTimeout" value="${pool.removeAbandonedTimeout}" />
+	</bean>
+
+	<!-- mybatis文件配置，扫描所有mapper文件 -->
+	<bean 
+	    id="sqlSessionFactory" 
+	    class="org.mybatis.spring.SqlSessionFactoryBean"
+		p:dataSource-ref="dataSource" 
+		p:configLocation="classpath:config/mybatis-config.xml"
+		p:mapperLocations="classpath:com/moran/proj/dao/impl/*.xml" 
+	/>
+	<!-- configLocation为mybatis属性mapperLocations为所有mapper --> 
+
+	<!-- spring与mybatis整合配置，扫描所有dao -->
+	<bean 
+	    id="mapperScannerConfigurer"
+	    class="org.mybatis.spring.mapper.MapperScannerConfigurer"
+		p:basePackage="com.moran.proj.dao" 
+		p:sqlSessionFactoryBeanName="sqlSessionFactory" 
+	/>
+	<!-- 配置事务管理器 -->
+	<bean 
+	    id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!-- 使用annotation定义事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
+	<!-- 配置druid监控spring jdbc -->
+<!-- 	<bean id="druid-stat-interceptor" class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor"></bean> -->
+<!-- 	<bean id="druid-stat-pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut" scope="prototype"> -->
+<!-- 		<property name="patterns"> -->
+<!-- 			<list> -->
+<!-- 				<value>com.moran.proj.service.impl.*</value> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+<!-- 	<aop:config> -->
+<!-- 		<aop:advisor advice-ref="druid-stat-interceptor" pointcut-ref="druid-stat-pointcut" /> -->
+<!-- 	</aop:config> -->
+<!-- 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"> -->
+<!-- 		<constructor-arg ref="dataSource" /> -->
+<!-- 	</bean> -->
+</beans>

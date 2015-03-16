@@ -6,6 +6,6 @@
 	<title></title>
 </head>
 <body>
-	Hello world!
+	<h1>500</h1>
 </body>
 </html>
