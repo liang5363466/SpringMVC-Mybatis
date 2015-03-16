@@ -2,10 +2,10 @@
     <wb-module deploy-name="SpringMVC-Mybatis">
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/" source-path="/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
-        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-        <property name="java-output-path" value="/SpringMVC-Mybatis/target/classes"/>
         <property name="context-root" value="SpringMVC-Mybatis"/>
+        <property name="java-output-path" value="/SpringMVC-Mybatis/target/classes"/>
     </wb-module>
 </project-modules>

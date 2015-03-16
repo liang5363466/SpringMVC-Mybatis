@@ -6,6 +6,6 @@
 	<title></title>
 </head>
 <body>
-	<p>Hello world !</p>
+	hello world!
 </body>
 </html>
