@@ -8,5 +8,7 @@ import com.moran.proj.entity.User;
 public interface UserDao
 {
 	int insertUser(User user);
+	
 	Set<User> getAllUsers();
 }
+                                                                               

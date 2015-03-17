@@ -33,14 +33,14 @@ public class UserServiceTest
 		System.out.println(users.size());
 	}
 	
-	@Test
-	public void addUser()
-	{
-		User user = new User();
-		// user.setId(new BigDecimal(1));
-		user.setName("Tom");
-		user.setPassword("123456");
-		user.setEmail("123456@qq.com");
-		userService.insertUser(user);
-	}
+//	@Test
+//	public void addUser()
+//	{
+//		User user = new User();
+//		// user.setId(new BigDecimal(1));
+//		user.setName("Tom");
+//		user.setPassword("123456");
+//		user.setEmail("123456@qq.com");
+//		userService.insertUser(user);
+//	}
 }
