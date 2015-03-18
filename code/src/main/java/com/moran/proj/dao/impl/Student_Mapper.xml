@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moran.proj.dao.StudentDao">
+	<insert id="insertStudent" parameterType="SMM_Student" keyProperty="id">
+		insert into SMM_STUDENT(id,name,password,email) 
+		values (S_SMM_STUDENT.nextval,#{name},#{password},#{email})
+	</insert>
+	<select id="getAllStudents" resultType="java.util.HashMap">
+	    select a.id,a.name,a.password,a.email,b.name as class_name 
+	    from SMM_STUDENT a left join SMM_CLASS b 
+	    on a.class_id = b.id
+	</select>
+</mapper>

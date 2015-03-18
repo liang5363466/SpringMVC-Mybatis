@@ -3,7 +3,7 @@ package com.moran.proj.entity;
 import java.math.BigDecimal;
 
 
-public class User
+public class SMM_Student
 {
 	private BigDecimal id;
 	private String name;
@@ -49,6 +49,5 @@ public class User
 	{
 		this.email = email;
 	}
-	
 	
 }

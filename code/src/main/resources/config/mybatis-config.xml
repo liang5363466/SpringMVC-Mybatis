@@ -3,7 +3,7 @@
 <configuration>
 	<!-- 命名空间 -->
 	<typeAliases>
-		<typeAlias alias="User" type="com.moran.proj.entity.User" />
+		<typeAlias alias="SMM_Student" type="com.moran.proj.entity.SMM_Student" />
 	</typeAliases>
 	<!-- 映射map -->
 	<mappers>

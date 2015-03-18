@@ -22,6 +22,7 @@ public abstract class AbstractController extends MultiActionController
 		this.request = request;
 		this.response = response;
 		this.session = request.getSession();
+		request("webRoot",request.getContextPath());
 		enableGZIP();
 	}
 

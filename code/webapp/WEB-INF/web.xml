@@ -17,7 +17,7 @@
 		<servlet-name>spring</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	<!-- Application 开启/关闭   监听 -->
+	<!-- Application 开启/关闭 监听 -->
 	<listener>
 		<listener-class>com.moran.proj.shared.ApplicationListener</listener-class>
 	</listener>
