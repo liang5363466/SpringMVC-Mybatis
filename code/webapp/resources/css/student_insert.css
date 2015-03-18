@@ -1,0 +1,21 @@
+* {
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+body {
+	margin: 50;
+}
+
+.control-group {
+	padding: 10 0 10 0;
+}
+
+.control-group * {
+	float: left;
+}
+
+.control-group label {
+	width: 60px;
+}
+

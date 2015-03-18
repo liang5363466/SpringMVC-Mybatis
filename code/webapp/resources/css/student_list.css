@@ -7,6 +7,11 @@ body {
 	margin: 50;
 }
 
+a {
+	color:#00AFF0;
+	text-decoration: none;
+}
+
 table {
 	*border-collapse: collapse; /* IE7 and lower */
 	border-spacing: 0;
@@ -41,7 +46,8 @@ table {
 
 .bordered th {
 	background-color: #dce9f9;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc), to(#dce9f9));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc),
+		to(#dce9f9));
 	background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
 	background-image: -moz-linear-gradient(top, #ebf3fc, #dce9f9);
 	background-image: -ms-linear-gradient(top, #ebf3fc, #dce9f9);

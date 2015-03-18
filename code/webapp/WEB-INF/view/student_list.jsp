@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@include file="top.jsp" %>
 <!DOCTYPE>
 <html>
 <head>
@@ -10,6 +11,11 @@
 <body>
 	<table class="bordered">
 		<thead>
+			<tr>
+				<th colspan="5">
+					<a id="btnStuAdd" href="#">添加新学生</a>
+				</th>
+			</tr>
 			<tr>
 				<th>姓名</th>
 				<th>密码</th>
