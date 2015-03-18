@@ -9,7 +9,7 @@ import com.moran.proj.dao.UserDao;
 import com.moran.proj.entity.User;
 import com.moran.proj.service.UserService;
 
-@Service
+@Service("UserService")
 public class UserServiceImpl implements UserService
 {
 	@Autowired

@@ -11,7 +11,7 @@
 	<!-- 开启Spring Mvc 注解 -->
 	<mvc:annotation-driven>
 	     <mvc:argument-resolvers>  
-            <bean class="com.ndsoft.cms.api.BeanArgumentResolver" />  
+            <bean class="com.moran.proj.api.BeanArgumentResolver" />  
         </mvc:argument-resolvers>  
         <mvc:message-converters register-defaults="true">  
             <!-- 将StringHttpMessageConverter的默认编码设为UTF-8 -->  

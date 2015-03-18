@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>SpringMVC-Mybatis</groupId>
-  <artifactId>SpringMVC-Mybatis</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>SpringMVC-Mybatis Maven Webapp</name>
-  <url>http://maven.apache.org</url>
- 
-<properties>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>SpringMVC-Mybatis</groupId>
+	<artifactId>SpringMVC-Mybatis</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>SpringMVC-Mybatis Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
 		<spring.version>4.1.5.RELEASE</spring.version>
 		<mybatis.version>3.2.8</mybatis.version>
 		<mybatis-spring.version>1.2.2</mybatis-spring.version>
@@ -18,9 +18,23 @@
 		<junit.version>4.11</junit.version>
 		<jackson.version>1.9.13</jackson.version>
 		<ojdbc.version>10.2.0.4.0</ojdbc.version>
+		<jackson.version>2.1.0</jackson.version>
+		<fileupload.version>1.3.1</fileupload.version>
+		<io.version>1.3.2</io.version>
 	</properties>
 	<dependencies>
-	    <!-- oracle jdbc -->
+		<!-- 文件上传 -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${fileupload.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${io.version}</version>
+		</dependency>
+		<!-- oracle jdbc -->
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc14</artifactId>
@@ -115,11 +129,20 @@
 		</dependency>
 		<!-- json数据 -->
 		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
 		<!-- 日志文件管理包 -->
 		<!-- log start -->
 		<dependency>
@@ -139,8 +162,8 @@
 		</dependency>
 		<!-- log end -->
 	</dependencies>
-  
-  <build>
-    <finalName>SpringMVC-Mybatis</finalName>
-  </build>
+
+	<build>
+		<finalName>SpringMVC-Mybatis</finalName>
+	</build>
 </project>
