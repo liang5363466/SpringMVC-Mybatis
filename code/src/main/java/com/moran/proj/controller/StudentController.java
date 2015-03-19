@@ -17,7 +17,6 @@ import com.moran.proj.shared.AbstractController;
 @RequestMapping("/Student/")
 public class StudentController extends AbstractController
 {
-
 	@Autowired
 	protected StudentService	studentService;
 
